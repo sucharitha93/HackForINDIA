@@ -69,12 +69,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         double gForce = Math.sqrt(gX * gX + gY * gY + gZ * gZ);
         if(gForce>2&& gForce<3 && gZ > gY)
         {
-            tv.setText("PIT DETECTED !");
+            tv.setTextSize(20);
+            tv.setText("PIT DETECTED !\n");
+
             //tv.append("X: "+accX+" Y: "+accY+" Z: "+accZ+"\n");
         }
         else if(gY>gZ && gForce >=3)
         {
-            tv.setText("Crash Detected");
+            tv.setTextSize(30);
+            tv.setText("Crash Detected !\n");
             //tv.append("X: "+accX+" Y: "+accY+" Z: "+accZ+"\n");
         }
         else
@@ -85,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
         //tv.append("X: "+accx.get(accx.size()-1)+" Y: "+accy.get(accy.size()-1)+" Z: "+accz.get(accz.size()-1)+"\n");
-        tv.append("X: "+accX+" Y: "+accY+" Z: "+accZ+"\n");
+        tv.append("\nX: "+accX+" Y: "+accY+" Z: "+accZ+"\n");
     }
 
     @Override
